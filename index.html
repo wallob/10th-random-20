@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body { height:100%; margin:0; display:flex; align-items:center; justify-content:center; font-family:sans-serif; flex-direction:column; }
+    a { padding:10px 20px; border-radius:8px; background:#333; color:#fff; text-decoration:none; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div>랜덤 링크로 이동 중입니다...</div>
+  <a id="fallback" style="display:none" href="#">직접 이동하기</a>
+  <script>
+    const links = [
+      "https://poclanos.com/album/ah-chim/",
+      "https://poclanos.com/album/%ed%8a%80%ea%b9%80%ec%9a%b0%eb%8f%99/,
+      "https://poclanos.com/album/%ed%86%a0%eb%a7%88%ed%86%a0-%ec%8a%ac%eb%9f%ac%ec%89%ac-%ec%99%88%ec%b8%a0/",
+      "https://poclanos.com/album/%eb%8b%a8%eb%ac%bc-%eb%b9%a0%ec%a7%84-%ea%bb%8c/",
+      "https://poclanos.com/album/%ec%a0%80%eb%85%81/",
+      "https://poclanos.com/album/teatime/",
+      "https://poclanos.com/album/%ec%9e%85%ea%b0%80%ec%97%90-%eb%94%b8%ea%b8%b0%ec%9e%bc/",
+      "https://poclanos.com/album/o-free/",
+      "https://poclanos.com/album/cheese-burger-feat-deepflow-minos-dj-son/",
+      "https://poclanos.com/album/popomo/"
+    ];
+
+    const random = links[Math.floor(Math.random() * links.length)];
+
+    try {
+      window.location.replace(random);
+      setTimeout(() => {
+        const a = document.getElementById("fallback");
+        a.href = random;
+        a.style.display = "inline-block";
+      }, 1200);
+    } catch (e) {
+      const a = document.getElementById("fallback");
+      a.href = random;
+      a.style.display = "inline-block";
+    }
+  </script>
+</body>
+</html>
